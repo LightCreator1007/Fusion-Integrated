@@ -19,7 +19,7 @@ This service holds **no user table**. Identity, RBAC and common directory data
                  ▼
         Fusion-Integrated                ← this repo
         owns fusion_integrated
-        backend  →  placement  (more modules later)
+        backend  →  placement, elm (leave management)  (more modules later)
         client   →  the shell: one login, one sidebar
         holds only user_id references — no user table
 ```

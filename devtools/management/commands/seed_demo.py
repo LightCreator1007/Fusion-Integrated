@@ -11,6 +11,7 @@ from django.db import transaction
 from django.utils import timezone
 
 from modules.directory.models import UserRef
+from modules.elm.models import OrgUnit, UnitMember
 from modules.placement.models import Application, Company, JobPosting
 
 
@@ -24,6 +25,8 @@ class Command(BaseCommand):
             (1002, "Bo Li", "student", "CSE"),
             (1003, "Chandra Rao", "student", "ECE"),
             (9001, "Dr. Meera Nair", "faculty", ""),
+            (9002, "Ravi Kulkarni", "staff", ""),
+            (9003, "Dr. Sunil Rao", "faculty", ""),
         ]:
             UserRef.objects.update_or_create(
                 user_id=uid,
@@ -56,5 +59,12 @@ class Command(BaseCommand):
                           "applied_at": timezone.now()})
 
 
+
+        # Leave management: one department, headed by 9001, with two members.
+        unit, _ = OrgUnit.objects.update_or_create(
+            code="CSE", defaults={"name": "Computer Science and Engineering",
+                                  "kind": "department", "head_user_id": 9001})
+        for uid in (9001, 9002, 9003):
+            UnitMember.objects.update_or_create(user_id=uid, defaults={"unit": unit})
 
         self.stdout.write(self.style.SUCCESS("demo data loaded"))
