@@ -13,6 +13,27 @@ For the intended taxonomy of modules not yet built, see
 |---|---|---|
 | `directory.user.search` | Search the institute directory | `Dean Academic`, `acadadmin`, `placement_chairman`, `placement_coordinator`, `placement_officer` |
 
+## `elm_leave`
+
+| Code | What it allows | Held by |
+|---|---|---|
+| `elm_leave.leave.apply` | Apply for leave and request an extension | `Dean Academic`, `Deputy Registrar`, `Director`, `Registrar`, `faculty`, `hod`, `leave_admin`, `staff` |
+| `elm_leave.leave.view_self` | See one's own leave, balances and history | `Dean Academic`, `Deputy Registrar`, `Director`, `Registrar`, `faculty`, `hod`, `leave_admin`, `staff` |
+| `elm_leave.leave.withdraw` | Withdraw a pending request | `Dean Academic`, `Deputy Registrar`, `Director`, `Registrar`, `faculty`, `hod`, `leave_admin`, `staff` |
+| `elm_leave.leave.cancel` | Request cancellation of approved leave | `Dean Academic`, `Deputy Registrar`, `Director`, `Registrar`, `faculty`, `hod`, `leave_admin`, `staff` |
+| `elm_leave.leave.resume` | Submit a resumption of duty | `Dean Academic`, `Deputy Registrar`, `Director`, `Registrar`, `faculty`, `hod`, `leave_admin`, `staff` |
+| `elm_leave.task.view` | See tasks addressed to you (substitute, review) | `Dean Academic`, `Deputy Registrar`, `Director`, `Registrar`, `faculty`, `hod`, `leave_admin`, `staff` |
+| `elm_leave.review.unit_head` | Review requests for one's own unit as Unit Head | `hod` |
+| `elm_leave.review.establishment` | Verify and route higher-sanction requests (Establishment) | `Deputy Registrar` |
+| `elm_leave.sanction.dean` | Sanction leave as Dean | `Dean Academic` |
+| `elm_leave.sanction.registrar` | Sanction leave as Registrar | `Registrar` |
+| `elm_leave.sanction.director` | Sanction leave as Director | `Director` |
+| `elm_leave.record.view` | See every employee's leave records | `leave_admin` |
+| `elm_leave.record.manage` | Record offline-sanctioned leave and correct balances | `leave_admin` |
+| `elm_leave.policy.manage` | Maintain leave policy, hierarchy and SLA configuration | `leave_admin` |
+| `elm_leave.calendar.manage` | Maintain and publish the holiday calendar and vacation periods | `leave_admin` |
+| `elm_leave.yearend.run` | Run year-end leave processing | `leave_admin` |
+
 ## `placement_cell`
 
 | Code | What it allows | Held by |
