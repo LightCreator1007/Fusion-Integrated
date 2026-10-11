@@ -231,6 +231,19 @@ SPECTACULAR_SETTINGS = {
     "DESCRIPTION": "Non-academic platform. Independent modules, one login.",
     "VERSION": "1.0.0",
     "SERVE_INCLUDE_SCHEMA": False,
+    # Several modules name a field `status`; without a stable name for each
+    # choice set the generator hashes them, and the client types churn.
+    "ENUM_NAME_OVERRIDES": {
+        "LeaveRequestStatusEnum": "modules.elm.models.leave.REQUEST_STATUS",
+        "LeaveRequestKindEnum": "modules.elm.models.leave.REQUEST_KIND",
+        "LeaveEntryChannelEnum": "modules.elm.models.leave.ENTRY_CHANNEL",
+        "LeaveHalfDayEnum": "modules.elm.models.leave.HALF_DAY",
+        "LeaveSubstituteStatusEnum": "modules.elm.models.leave.SUBSTITUTE_STATUS",
+        "LeaveTaskStatusEnum": "modules.elm.models.leave.TASK_STATUS",
+        "LeaveResumptionStatusEnum": "modules.elm.models.leave.RESUMPTION_STATUS",
+        "HolidayCalendarStatusEnum": "modules.elm.models.calendar.CALENDAR_STATUS",
+        "HolidayKindEnum": "modules.elm.models.calendar.HOLIDAY_KIND",
+    },
 }
 
 CORS_ALLOW_ALL_ORIGINS = False
